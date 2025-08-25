@@ -11,7 +11,7 @@ module.exports.signup = async(req, res)=>{
         const registerUser = await User.register(newUser, password);
         req.login(registerUser, (err)=>{
             if(err){
-                return   next(err);
+                return next(err);
             }
             req.flash("success", "Welcome to Wanderlust!");
              res.redirect("/listing");
